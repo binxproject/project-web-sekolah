@@ -1,46 +1,49 @@
 // carousel
 const slides = document.querySelector('.carousel-slides');
-const images = document.querySelectorAll('.carousel-slides img');
+const images = [
+    "/assets/images/carousel/1.jpg",
+    "/assets/images/carousel/2.jpg",
+    "/assets/images/carousel/3.jpg"
+]
 const btnPrev = document.querySelector('.btn-prev');
 const btnNext = document.querySelector('.btn-next');
 
 let currentIndex = 0;
 let autoPlayInterval;
 
-// menggeser slide
-function updateCarousel() {
-    const slideWidth = images[0].clientWidth;
-    slides.style.transform = `translateX(${-currentIndex * slideWidth}px)`
+// function to update background-image
+function updateBackgroundImage() {
+    slides.style.backgroundImage = `url("${images[currentIndex]}")`;
+};
+
+function startAutoPlay() {
+    stopAutoPlay();
+    autoPlayInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateBackgroundImage();
+    }, 3000);
+};
+
+function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
 };
 
 btnPrev.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateCarousel();
-    resetAutoPlay();
+    updateBackgroundImage();
+    startAutoPlay();
 });
 
 btnNext.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % images.length;
-    updateCarousel();
-    resetAutoPlay();
+    updateBackgroundImage();
+    startAutoPlay();
 });
 
-function startAutoPlay() {
-    autoPlayInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateCarousel();
-    }, 3000);
-};
-
-function resetAutoPlay() {
-    clearInterval(autoPlayInterval);
-    startAutoPlay();
-};
-
-// update ukuran saat window diubah
-window.addEventListener('resize', updateCarousel);
-
+updateBackgroundImage();
 startAutoPlay();
+
+
 
 
 // hamburger menu
@@ -59,3 +62,34 @@ document.addEventListener('click', function(e) {
     };
 });
 
+
+
+// dark mode
+document.addEventListener('DOMContentLoaded', function() {
+    const btnTheme = document.getElementById('theme');
+    const iconTheme = btnTheme.querySelector('i');
+    const bodyHtml = document.body;
+
+    // set theme based on local storage
+    const currentTheme = localStorage.getItem('theme');
+
+    if(currentTheme) {
+        bodyHtml.classList.add(currentTheme);
+
+        if(currentTheme === 'dark-mode') {
+            iconTheme.classList.replace('fa-moon', 'fa-sun');
+        };
+    };
+
+    btnTheme.addEventListener('click', function() {
+        bodyHtml.classList.toggle('dark-mode');
+
+        if(bodyHtml.classList.contains('dark-mode')) {
+            iconTheme.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'dark-mode');
+        } else {
+            iconTheme.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'light-mode');
+        };
+    });
+});

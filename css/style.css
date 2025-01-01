@@ -1,6 +1,9 @@
 :root {
+    --nav-bg: #1d4ed8; /* warna biru 700 */
+    --nav-bg-hover: #1e40af; /* warna biru 800 */
     --bg-color: #eaeaea;
-    --color-blue: #1d4ed8;  /* warna biru 700 */
+    --color-blue: ;  
+    --color-blue-2: ; 
     --color-white: #ffffff; /* warna putih */
     --color-grey: #333333; /* warna abu abu */
 }
@@ -64,6 +67,12 @@ body {
     background-color: #ffffff;
 }
 
+/* theme */
+.dark-mode {
+    --nav-bg: #171717;
+    --nav-bg-hover: #000000;
+}
+
 
 /* navbar */
 
@@ -76,13 +85,16 @@ body {
 } */
 nav {
     display: flex;
-    position: relative;
-    background-color: var(--color-blue);
-    padding: 8px 7%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--nav-bg);
+    padding: 0 7%;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-    
+    z-index: 300;
 }
 
 nav .logo h1 {
@@ -118,12 +130,16 @@ nav .menu > li {
 nav .menu > li > a {
     color: #ffffff;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 20px;
     display: inline-block;
 }
 
 nav .menu > li > a:hover {
-    background-color: red;
+    background-color: var(--nav-bg-hover);
+}
+
+nav .menu .dropdown:hover > a {
+    background-color: var(--nav-bg-hover);
 }
 
 nav .menu > .dropdown > .dropdown-menu {
@@ -147,8 +163,11 @@ nav .menu > .dropdown > .dropdown-menu > li > a {
 
 nav .menu > .dropdown > .dropdown-menu > li > a:hover {
     background-color: #eaeaea;
-    
 }
+
+/* nav .menu > .dropdown > .dropdown-menu > li > a:hover nav .menu > li > a {
+    background-color: black;
+} */
 
 nav .menu .dropdown:hover .dropdown-menu {
     display: block;
@@ -158,6 +177,8 @@ nav .theme {
     font-size: 22px;
     color: #ffffff;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
 
 
@@ -166,18 +187,17 @@ nav .theme {
     position: relative;
     overflow: hidden;
     /* background-color: red; */
+    width: 100%;
+    height: 100vh;
 }
 
 .carousel .carousel-slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 100%;
-}
-
-.carousel .carousel-slides img {
+    background-size: cover;
+    background-position: center;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    transition: 1s;
+    background-attachment: fixed;
 }
 
 .btn-prev, .btn-next {
@@ -205,8 +225,36 @@ nav .theme {
 }
 
 
+/* section sambutan */
+.sambutan {
+    width: 1000px;
+    margin: 40px auto;
+    display: flex;
+    padding: 20px;
+    /* background-color: #eaeaea; */
+}
+
+/* .sambutan .wrap {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+.sambutan h2 {
+    margin-bottom: 20px;
+}
+
+.sambutan img {
+    width: 300px;
+}
+
+
+
+
 /* responsive */
 @media (max-width: 768px) {
+    nav {
+        padding: 10px 7%;
+    }
     nav .menu-toggle {
         display: inline-block;
     }
@@ -232,9 +280,38 @@ nav .theme {
     nav .menu li a {
         display: block;
         color: #333;
+        padding: 10px 20px;
     }
 
     nav .menu li a:hover {
         background-color: #eaeaea;
     }
+
+    nav .menu .dropdown:hover > a {
+        background-color: #eaeaea;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .sambutan {
+        flex-direction: column;
+        margin: 20px auto;
+        width: 90vw;
+        padding: 0;
+        /* justify-content: space-evenly; */
+    }
+
+    .sambutan h2 {
+       margin: 10px auto;
+       text-align: center;
+    }
+    .sambutan img {
+        order: -1;
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    
 }
