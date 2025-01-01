@@ -44,9 +44,18 @@ startAutoPlay();
 
 
 // hamburger menu
-const menuToggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
+const navbar = document.querySelector('.menu');
 
-menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
+function menuToggle() {
+    navbar.classList.toggle('active');
+};
+
+// menutup hamburger menu ketika klik diluar elemen
+const hamburgerMenuClose = document.querySelector('.menu-toggle');
+
+document.addEventListener('click', function(e) {
+    if(!hamburgerMenuClose.contains(e.target) && !navbar.contains(e.target)) {
+        navbar.classList.remove('active');
+    };
 });
+

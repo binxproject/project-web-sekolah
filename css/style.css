@@ -1,3 +1,10 @@
+:root {
+    --bg-color: #eaeaea;
+    --color-blue: #1d4ed8;  /* warna biru 700 */
+    --color-white: #ffffff; /* warna putih */
+    --color-grey: #333333; /* warna abu abu */
+}
+
 /* css reset */
 html, body, * {
     margin: 0;
@@ -54,17 +61,28 @@ html, body, * {
 body {
     font-family: "Roboto";
     font-size: 16px;
+    background-color: #ffffff;
 }
 
 
 /* navbar */
-nav {
-    background-color: #4f46e5;
-    padding: 8px 0px;
+
+/* .navbar-container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+} */
+nav {
+    display: flex;
+    position: relative;
+    background-color: var(--color-blue);
+    padding: 8px 7%;
+    align-items: center;
+    justify-content: space-between;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    
 }
 
 nav .logo h1 {
@@ -79,10 +97,10 @@ nav .menu {
     /* flex-direction: row; */
 }
 
-nav .menu.active {
+/* nav .menu.active {
     display: flex;
     flex-direction: column;
-}
+} */
 
 nav .menu-toggle {
     display: none;
@@ -101,11 +119,11 @@ nav .menu > li > a {
     color: #ffffff;
     text-decoration: none;
     padding: 10px 20px;
-    display: block;
+    display: inline-block;
 }
 
 nav .menu > li > a:hover {
-    background-color: #4338ca;
+    background-color: red;
 }
 
 nav .menu > .dropdown > .dropdown-menu {
@@ -113,21 +131,23 @@ nav .menu > .dropdown > .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #eaeaea;
+    background-color: #ffffff;
     padding: 0;
     list-style-type: none;
     z-index: 100;
+    width: 200px;
 }
 
 nav .menu > .dropdown > .dropdown-menu > li > a {
-    color: black;
+    color: #333;
     padding: 10px 20px;
     display: block;
     text-decoration: none;
 }
 
 nav .menu > .dropdown > .dropdown-menu > li > a:hover {
-    background-color: yellow;
+    background-color: #eaeaea;
+    
 }
 
 nav .menu .dropdown:hover .dropdown-menu {
@@ -187,41 +207,34 @@ nav .theme {
 
 /* responsive */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
+    nav .menu-toggle {
+        display: inline-block;
     }
 
     nav .menu {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        background-color: #4f46e5;
-        padding: 0;
-        /* position: absolute;
+        position: absolute;
         top: 100%;
-        left: 0; */
+        
+        left: -100%;
+        height: 100vh;
+        z-index: 200;
+        /* width: 30rem; */
+        background-color: #ffffff;
+        
+        transition: 1s;
+        flex-direction: column;
     }
 
     nav .menu.active {
-        display: flex;
+        left: 0;
     }
 
-    nav .menu > li > a {
-        padding: 10px 20px;
-        width: 100%;
-    }
-
-    nav .menu .dropdown-menu {
-        position: static;
-    }
-
-    nav .menu-toggle {
+    nav .menu li a {
         display: block;
+        color: #333;
     }
 
-    nav .theme {
-        align-self: flex-end;
+    nav .menu li a:hover {
+        background-color: #eaeaea;
     }
 }
