@@ -65,6 +65,8 @@ body {
     font-family: "Roboto";
     font-size: 16px;
     background-color: #ffffff;
+    color: #333;
+    min-height: 4000px;
 }
 
 /* theme */
@@ -228,9 +230,9 @@ nav .theme {
 /* section sambutan */
 .sambutan {
     width: 1000px;
-    margin: 40px auto;
+    margin: 0 auto;
     display: flex;
-    padding: 20px;
+    padding: 40px 20px;
     /* background-color: #eaeaea; */
 }
 
@@ -248,10 +250,135 @@ nav .theme {
 }
 
 
+/* section jurusan */
+.jurusan-container {
+    background-color: #eaeaea;
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.jurusan-container .title {
+    margin-bottom: 20px;
+}
+
+hr {
+    width: 150px;
+    border-bottom: 5px solid #333;
+    
+    margin: 5px auto;
+}
+
+.jurusan-container .wrap {
+    /* background-color: red; */
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.jurusan-container .jurusan {
+    /* border: 1px solid red; */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    /* flex: 0; */
+}
+
+.jurusan-container .jurusan i {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+
+/* section contact */
+.contact {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.contact .wrap {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    color: #333;
+}
+
+.contact .wrap .left {
+    background-color: yellow;
+    flex: 1 1 700px;
+    align-items: stretch;
+}
+
+.map {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+.contact .wrap .right {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+    flex: 1 1 300px;
+    background-color: #eaeaea;
+    align-items: stretch;
+}
+
+.contact .wrap .right a {
+    /* background-color: green; */
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-ig {
+    background-color: #FD1D1D;
+}
+
+.btn-fb {
+    background-color: #1877F2;
+}
+.btn-wa {
+    background-color: #25D366;
+}
+
+.btn-ig:hover {
+    background-color: #E10000;
+}
+
+.btn-fb:hover {
+    background-color: #165EBD;
+}
+
+.btn-wa:hover {
+    background-color: #1A9A5B;
+}
+
+
+
+
 
 
 /* responsive */
-@media (max-width: 768px) {
+
+/* mobile phone */
+@media (max-width: 450px) {
     nav {
         padding: 10px 7%;
     }
@@ -313,5 +440,22 @@ nav .theme {
         margin: 0 auto;
     }
 
+    .jurusan-container {
+        width: 100vw;
+        /* padding: 0; */
+    }
+
+    .contact .wrap {
+        width: 100vw;
+    }
+
+    .contact .wrap .left,
+    .contact .wrap .right {
+        flex: 1 1 100%;
+    }
+
+    .map {
+        height: 300px;
+    }
     
 }
