@@ -1,11 +1,12 @@
 :root {
-    --nav-bg: #1d4ed8; /* warna biru 700 */
-    --nav-bg-hover: #1e40af; /* warna biru 800 */
-    --bg-color: #eaeaea;
-    --color-blue: ;  
-    --color-blue-2: ; 
-    --color-white: #ffffff; /* warna putih */
-    --color-grey: #333333; /* warna abu abu */
+    --nav-bg: #ffffff;
+    --nav-bg-hover: #eaeaea;
+    --color-nav: #333333;
+    --color-box: #0d6efd;
+    --bg-body: #ffffff;
+    --color-text: #333333;
+    --footer-bg: #0d6efd;
+    --footer-text: #ffffff;
 }
 
 /* css reset */
@@ -64,15 +65,20 @@ html, body, * {
 body {
     font-family: "Roboto";
     font-size: 16px;
-    background-color: #ffffff;
+    background-color: var(--bg-body);
     color: #333;
-    min-height: 4000px;
 }
 
 /* theme */
 .dark-mode {
-    --nav-bg: #171717;
-    --nav-bg-hover: #000000;
+    --nav-bg: #121212;
+    --nav-bg-hover: #0A0A0A;
+    --color-nav: #ffffff;
+    --color-box: #121212;
+    --bg-body: #1E1E1E;
+    --color-text: #ffffff;
+    --footer-bg: #ffffff;
+    --footer-text: #333333;
 }
 
 
@@ -95,14 +101,15 @@ nav {
     padding: 0 7%;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    /* border-bottom: 2px solid var(--color-nav); */
+    box-shadow: 0 0 1px var(--color-nav);
     z-index: 300;
 }
 
 nav .logo h1 {
     font-weight: bold;
     font-style: italic;
-    color: #ffffff;
+    color: var(--color-nav);
 }
 
 nav .menu {
@@ -122,7 +129,7 @@ nav .menu-toggle {
     font-size: 22px;
     border: none;
     cursor: pointer;
-    color: #ffffff;
+    color: var(--color-nav);
 }
 
 nav .menu > li {
@@ -130,7 +137,7 @@ nav .menu > li {
 }
 
 nav .menu > li > a {
-    color: #ffffff;
+    color: var(--color-nav);
     text-decoration: none;
     padding: 20px;
     display: inline-block;
@@ -177,7 +184,7 @@ nav .menu .dropdown:hover .dropdown-menu {
 
 nav .theme {
     font-size: 22px;
-    color: #ffffff;
+    color: var(--color-nav);
     cursor: pointer;
     background-color: transparent;
     border: none;
@@ -234,12 +241,8 @@ nav .theme {
     display: flex;
     padding: 40px 20px;
     /* background-color: #eaeaea; */
+    color: var(--color-text);
 }
-
-/* .sambutan .wrap {
-    display: flex;
-    flex-wrap: wrap;
-} */
 
 .sambutan h2 {
     margin-bottom: 20px;
@@ -252,11 +255,9 @@ nav .theme {
 
 /* section jurusan */
 .jurusan-container {
-    background-color: #eaeaea;
     width: 100%;
     padding: 40px 0;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     text-align: center;
@@ -264,29 +265,32 @@ nav .theme {
 
 .jurusan-container .title {
     margin-bottom: 20px;
+    
+}
+
+.title h2 {
+    color: var(--color-text);
 }
 
 hr {
     width: 150px;
-    border-bottom: 5px solid #333;
-    
+    border-bottom: 2px solid var(--color-text);
     margin: 5px auto;
 }
 
 .jurusan-container .wrap {
-    /* background-color: red; */
     max-width: 1000px;
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    
 }
 
 .jurusan-container .jurusan {
     /* border: 1px solid red; */
     padding: 20px;
-    background-color: #ffffff;
+    background-color: var(--color-box);
+    color: #eaeaea;
     border-radius: 8px;
     text-align: center;
     width: 300px;
@@ -315,7 +319,7 @@ hr {
 }
 
 .contact .wrap .left {
-    background-color: yellow;
+    /* background-color: yellow; */
     flex: 1 1 700px;
     align-items: stretch;
 }
@@ -334,7 +338,7 @@ hr {
     text-align: center;
     padding: 20px;
     flex: 1 1 300px;
-    background-color: #eaeaea;
+    /* background-color: #eaeaea; */
     align-items: stretch;
 }
 
@@ -370,6 +374,14 @@ hr {
     background-color: #1A9A5B;
 }
 
+
+/* footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 16px 0;
+    text-align: center;
+}
 
 
 

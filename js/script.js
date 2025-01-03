@@ -93,3 +93,12 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     });
 });
+
+
+// menghetikan effect refresh saat dropdown a di klik
+document.querySelector('.dropdown-toggle').addEventListener('click', function(e) {
+    e.preventDefault(); //mencegah tindakan default seperti refresh halaman
+    // const dropdown = this.parentElement;
+
+    // dropdown.classList.toggle('active')
+})
