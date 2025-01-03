@@ -101,4 +101,8 @@ document.querySelector('.dropdown-toggle').addEventListener('click', function(e)
     // const dropdown = this.parentElement;
 
     // dropdown.classList.toggle('active')
-})
+});
+
+
+// alert sementara
+alert('Website masih dalam tahap pengembangan mohon dimengerti');
