@@ -11,10 +11,26 @@ const btnNext = document.querySelector('.btn-next');
 let currentIndex = 0;
 let autoPlayInterval;
 
+
+// preload gambar
+function preloadImages(imagesArray) {
+    imagesArray.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+};
+
+
 // function to update background-image
 function updateBackgroundImage() {
-    slides.style.backgroundImage = `url("${images[currentIndex]}")`;
+    const img = new Image();
+    img.src = images[currentIndex];
+    img.onload = () => {
+        slides.style.backgroundImage = `url("${images[currentIndex]}")`;
+    }
+    
 };
+
 
 function startAutoPlay() {
     stopAutoPlay();
@@ -40,6 +56,8 @@ btnNext.addEventListener('click', () => {
     startAutoPlay();
 });
 
+
+preloadImages(images);
 updateBackgroundImage();
 startAutoPlay();
 
