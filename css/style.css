@@ -2,10 +2,10 @@
     --nav-bg: #ffffff;
     --nav-bg-hover: #eaeaea;
     --color-nav: #333333;
-    --color-box: #0d6efd;
+    --color-box: #333333;
     --bg-body: #ffffff;
     --color-text: #333333;
-    --footer-bg: #0d6efd;
+    --footer-bg: #333333;
     /* --footer-text: #ffffff; */
 }
 
@@ -193,6 +193,29 @@ nav .theme {
     background-attachment: fixed;
 }
 
+.carousel .carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 99;
+}
+
+.carousel .carousel-dots .dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel .carousel-dots .dot.active {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
 .btn-prev, .btn-next {
     position: absolute;
     top: 50%;
@@ -219,12 +242,25 @@ nav .theme {
 
 
 /* section sambutan */
+.sambutan-container {
+    width: 100%;
+    background-color: #333;
+    /* color: #fff; */
+    /* background-color: red; */
+    min-height: 500px;
+}
 .sambutan {
     max-width: 1000px;
+    /* background-color: green; */
     margin: 0 auto;
     display: flex;
     padding: 40px 20px;
-    color: var(--color-text);
+    /* color: var(--color-text); */
+    color: #fff;
+}
+
+.sambutan .wrap {
+
 }
 
 .sambutan h2 {
@@ -239,6 +275,8 @@ nav .theme {
 /* section jurusan */
 .jurusan-container {
     width: 100%;
+    min-height: 500px;
+    /* background-color: yellow; */
     padding: 40px 0;
     display: flex;
     align-items: center;
@@ -287,15 +325,19 @@ hr {
 /* section contact */
 .contact {
     width: 100%;
+    min-height: 500px;
+    background-color: #333;
     padding: 40px 0;
 }
 
 .contact .wrap {
     max-width: 1000px;
+    /* background-color: red; */
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    color: #333;
+    /* color: #333; */
+    color: #ffffff;
 }
 
 .contact .wrap .left {
@@ -318,6 +360,7 @@ hr {
     padding: 20px;
     flex: 1 1 300px;
     align-items: stretch;
+    /* color: yellow; */
 }
 
 .contact .wrap .right a {
@@ -326,6 +369,10 @@ hr {
     color: #ffffff;
     text-decoration: none;
     transition: 0.3s;
+}
+
+.contact .wrap .right .title h2 {
+    color: #ffffff;
 }
 
 .btn-ig {
@@ -358,8 +405,125 @@ footer {
     color: #ffffff;
     padding: 16px 0;
     text-align: center;
+    margin-top: 100px;
 }
 
+/* test */
+/* Section Styling */
+.testimonial-section {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.testimonial-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2c6e49;
+}
+
+/* Container and Items */
+.testimonial-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.testimonial-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+.testimonial-item {
+    flex: 0 0 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px 0;
+    object-fit: cover;
+}
+
+.testimonial-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.testimonial-item blockquote p {
+    font-size: 14px;
+    font-style: italic;
+    color: #666;
+}
+
+.testimonial-item p {
+    font-size: 12px;
+    color: #555;
+}
+
+
+/* Navigation Buttons */
+button.scroll-left, button.scroll-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+button.scroll-left {
+    left: 10px;
+}
+
+button.scroll-right {
+    right: 10px;
+}
+
+button.scroll-left:hover, button.scroll-right:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+button.scroll-left, button.scroll-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button.scroll-left {
+    left: 10px;
+}
+
+button.scroll-right {
+    right: 10px;
+}
+
+button.scroll-left:hover, button.scroll-right:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
 
 
@@ -414,9 +578,7 @@ footer {
 
     .sambutan {
         flex-direction: column;
-        margin: 20px auto;
         width: 90vw;
-        padding: 0;
         /* justify-content: space-evenly; */
     }
 
@@ -439,8 +601,17 @@ footer {
     nav .menu {
         width: 100vw;
     }
+
+    nav .menu .dropdown .dropdown-menu {
+        /* border: 1px solid red; */
+        width: 100vw;
+    }
     .carousel {
         height: 60vh;
+    }
+
+    .sambutan img {
+        width: 125px;
     }
 
     .jurusan-container {

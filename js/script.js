@@ -7,6 +7,7 @@ const images = [
 ]
 const btnPrev = document.querySelector('.btn-prev');
 const btnNext = document.querySelector('.btn-next');
+const dotsContainer = document.querySelector('.carousel-dots');
 
 let currentIndex = 0;
 let autoPlayInterval;
@@ -27,8 +28,8 @@ function updateBackgroundImage() {
     img.src = images[currentIndex];
     img.onload = () => {
         slides.style.backgroundImage = `url("${images[currentIndex]}")`;
-    }
-    
+    };
+    updateDots(); //new
 };
 
 
@@ -44,6 +45,29 @@ function stopAutoPlay() {
     clearInterval(autoPlayInterval);
 };
 
+
+function createDots() {
+    images.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateBackgroundImage();
+            startAutoPlay();
+        });
+        dotsContainer.appendChild(dot);
+    });
+};
+
+function updateDots() {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+    });
+};
+
+
 btnPrev.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     updateBackgroundImage();
@@ -57,7 +81,9 @@ btnNext.addEventListener('click', () => {
 });
 
 
+
 preloadImages(images);
+createDots();
 updateBackgroundImage();
 startAutoPlay();
 
@@ -124,3 +150,47 @@ document.querySelector('.dropdown-toggle').addEventListener('click', function(e)
 
 // alert sementara
 alert('Website masih dalam tahap pengembangan mohon dimengerti');
+
+
+
+
+// test
+const container = document.querySelector('.testimonial-container');
+
+let isDragging = false;
+let startX, scrollLeft;
+
+// Event saat mulai men-drag
+container.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+});
+
+container.addEventListener('mouseleave', () => {
+    isDragging = false;
+});
+
+container.addEventListener('mouseup', () => {
+    isDragging = false;
+});
+
+container.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 2; // Sesuaikan sensitivitas
+    container.scrollLeft = scrollLeft - walk;
+});
+
+// Untuk layar sentuh (touch events)
+container.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+});
+
+container.addEventListener('touchmove', (e) => {
+    const x = e.touches[0].pageX - container.offsetLeft;
+    const walk = (x - startX) * 2; // Sesuaikan sensitivitas
+    container.scrollLeft = scrollLeft - walk;
+});
