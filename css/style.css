@@ -294,7 +294,7 @@ nav .theme {
 
 hr {
     width: 150px;
-    border-bottom: 2px solid var(--color-text);
+    border-bottom: 2px solid red;
     margin: 5px auto;
 }
 
@@ -326,7 +326,7 @@ hr {
 .contact {
     width: 100%;
     min-height: 500px;
-    background-color: #333;
+    background-color: #fff;
     padding: 40px 0;
 }
 
@@ -372,7 +372,7 @@ hr {
 }
 
 .contact .wrap .right .title h2 {
-    color: #ffffff;
+    color: #333;
 }
 
 .btn-ig {
@@ -409,68 +409,50 @@ footer {
 }
 
 /* test */
-/* Section Styling */
-.testimonial-section {
-    padding: 20px;
-    background-color: #fff;
+.ulasan-container {
+    width: 100%;
+    /* border-top: 5px solid red; */
+    min-height: 500px;
+    background-color: #333333;
+    padding: 60px 0;
+}
+
+.ulasan-container .title h2 {
+    color: #ffffff;
     text-align: center;
-    overflow: hidden;
-    cursor: pointer;
 }
 
-.testimonial-section h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #2c6e49;
-}
 
-/* Container and Items */
-.testimonial-container {
+
+.ulasan-container .ulasan {
     display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 10px;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-}
-
-.testimonial-container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar */
-}
-
-.testimonial-item {
-    flex: 0 0 300px;
-    background-color: #f9f9f9;
+    /* border: 5px solid red; */
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    /* padding-bottom: 60px; */
+    margin-top: 20px;
+    gap: 20px;
+    overflow-x: visible;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    
+    /* white-space: nowrap; */
+}
+
+.ulasan-container .ulasan .item-ulasan {
+    box-shadow: 0px 0px 5px black;
+    background-color: #ffffff;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    min-width: 250px;
+    max-width: 250px;
 }
 
-.testimonial-item img {
-    width: 100px;
-    height: 100px;
+.ulasan-container .ulasan .item-ulasan img {
+    width: 150px;
     border-radius: 50%;
-    margin: 10px 0;
-    object-fit: cover;
-}
-
-.testimonial-item h3 {
-    font-size: 18px;
-    margin: 10px 0;
-    color: #333;
-}
-
-.testimonial-item blockquote p {
-    font-size: 14px;
-    font-style: italic;
-    color: #666;
-}
-
-.testimonial-item p {
-    font-size: 12px;
-    color: #555;
+    margin: 0 auto;
 }
 
 

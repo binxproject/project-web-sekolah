@@ -149,48 +149,12 @@ document.querySelector('.dropdown-toggle').addEventListener('click', function(e)
 
 
 // alert sementara
-alert('Website masih dalam tahap pengembangan mohon dimengerti');
+// alert('Website masih dalam tahap pengembangan mohon dimengerti');
 
 
 
 
 // test
-const container = document.querySelector('.testimonial-container');
 
-let isDragging = false;
-let startX, scrollLeft;
 
-// Event saat mulai men-drag
-container.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startX = e.pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
-});
 
-container.addEventListener('mouseleave', () => {
-    isDragging = false;
-});
-
-container.addEventListener('mouseup', () => {
-    isDragging = false;
-});
-
-container.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - container.offsetLeft;
-    const walk = (x - startX) * 2; // Sesuaikan sensitivitas
-    container.scrollLeft = scrollLeft - walk;
-});
-
-// Untuk layar sentuh (touch events)
-container.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
-});
-
-container.addEventListener('touchmove', (e) => {
-    const x = e.touches[0].pageX - container.offsetLeft;
-    const walk = (x - startX) * 2; // Sesuaikan sensitivitas
-    container.scrollLeft = scrollLeft - walk;
-});
