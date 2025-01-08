@@ -1,9 +1,9 @@
 // carousel
 const slides = document.querySelector('.carousel-slides');
 const images = [
-    "/assets/images/carousel/1.jpg",
-    "/assets/images/carousel/2.jpg",
-    "/assets/images/carousel/3.jpg"
+    "assets/images/carousel/1.jpg",
+    "assets/images/carousel/2.jpg",
+    "assets/images/carousel/3.jpg"
 ]
 const btnPrev = document.querySelector('.btn-prev');
 const btnNext = document.querySelector('.btn-next');
