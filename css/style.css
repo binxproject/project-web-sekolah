@@ -105,6 +105,16 @@ body {
 }
 
 
+/* section empty */
+.empty {
+    min-height: 100vh;
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* navbar */
 nav {
     display: flex;
@@ -488,6 +498,140 @@ footer {
     border: 3px solid #fff;
 }
 
+
+/* section ekskul */
+.ekskul {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 100px;
+    
+    /* display: flex;
+    justify-content: center; */
+}
+
+.ekskul-wrap {
+    /* background-color: cyan; */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ekskul-wrap img {
+    width: 100%;
+    height: auto;
+    border: 5px solid red;
+}
+
+
+/* section prestasi */
+.prestasi {
+    margin-top: 100px;
+    text-align: center;
+    /* min-height: 500px; */
+}
+
+.prestasi .tahun-prestasi {
+    /* gap: 20px; */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    /* background-color: red; */
+    padding: 20px;
+}
+
+.prestasi .tahun-prestasi button {
+    /* background-color: #333;
+    color: #fff; */
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    /* gap: 20px; */
+}
+
+.prestasi .tahun-prestasi button.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.prestasi .row {
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* background-color: yellow; */
+    max-width: 1000px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.prestasi .row.active {
+    display: flex;
+}
+
+.prestasi .row .item-prestasi {
+    width: 300px;
+    /* background-color: red; */
+    /* border: 3px solid #333; */
+    box-shadow: 0px 0px 5px #333;
+   
+}
+
+.prestasi .row .item-prestasi img {
+    width: 100%;
+}
+
+
+/* modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.modal .modal-content {
+    position: relative;
+    background-color: #ffffff;
+    color: #333333;
+    margin: 10% auto;
+    width: 50%;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    
+}
+
+.modal .modal-content button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    /* background-color: red; */
+    color: #333333;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+.modal .modal-content button:hover {
+    color: red;
+}
+
+.modal .modal-content img {
+    width: 400px;
+}
+
+.modal .modal-content .wrap-right {
+    padding: 20px;
+    /* background-color: red; */
+}
 
 
 
