@@ -518,7 +518,7 @@ footer {
 .ekskul-wrap img {
     width: 100%;
     height: auto;
-    border: 5px solid red;
+    /* border: 5px solid red; */
 }
 
 
@@ -594,15 +594,29 @@ footer {
     display: none;
 }
 
+@keyframes animationModal {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
 .modal .modal-content {
     position: relative;
     background-color: #ffffff;
     color: #333333;
     margin: 10% auto;
-    width: 50%;
+    max-width: 50%;
     border-radius: 10px;
     padding: 20px;
     display: flex;
+    flex-direction: row;
+    gap: 20px;
+    animation: animationModal 0.5s;
     
 }
 
@@ -625,13 +639,47 @@ footer {
 }
 
 .modal .modal-content img {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
 }
 
 .modal .modal-content .wrap-right {
+    flex: 1;
     padding: 20px;
     /* background-color: red; */
 }
+
+
+/* section galeri foto */
+.galeri-foto {
+    /* background-color: #25D366; */
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* box-shadow: 5px 5px 5px red; */
+}
+
+.galeri-foto .item {
+    
+}
+
+.galeri-foto img {
+    width: 300px;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
+    
+}
+
+.galeri-foto .item h3 {
+    text-align: center;
+    margin: 5px auto;
+}
+
 
 
 
@@ -640,7 +688,9 @@ footer {
 
 /* laptop 1200 */
 @media (max-width: 1200px) {
-    
+    .modal .modal-content {
+        max-width: 90%;
+    }
 }
 
 
@@ -703,6 +753,20 @@ footer {
         width: 200px;
         margin: 0 auto;
     }
+
+    .modal .modal-content {
+        flex-direction: column;
+        max-width: 90%;
+        margin: 5% auto;
+    }
+
+    .modal .modal-content img {
+        max-width: 100%;
+    }
+
+    .modal .modal-content .wrap-right {
+        padding: 10px;
+    }
 }
 
 
@@ -740,5 +804,24 @@ footer {
     .map {
         height: 300px;
     }
+
+    .modal .modal-content {
+        margin: 5% auto;
+        padding: 15px;
+    }
+
+    .modal .modal-content button {
+        font-size: 20px;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+    /* .modal .modal-content {
+        width: 80%;
+        flex-direction: column;
+    }
+
+    .modal .modal-content img {
+        
+    } */
     
 }

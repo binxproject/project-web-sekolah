@@ -151,7 +151,7 @@ if (slides) {
 
 
 // alert sementara
-alert('Website masih dalam tahap pengembangan mohon dimengerti');
+// alert('Website masih dalam tahap pengembangan mohon dimengerti');
 
 
 
