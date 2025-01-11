@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- icons fontawesome -->
     <link rel="stylesheet" href="assets/icons/fontawesome-free-6.7.2-web/css/all.css">
+    <!-- animation css aos -->
+    <link rel="stylesheet" href="assets/aos-animation/dist/aos.css">
+    
 
 </head>
 
@@ -74,7 +77,7 @@
 
     <!-- section kata kata start -->
     <section class="sambutan-container">
-        <div class="sambutan">
+        <div class="sambutan" data-aos="fade-up" data-aos-duration="1000">
             <div class="wrap-text">
                 <h2>Lorem ipsum dolor sit.</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos perspiciatis ab qui eum architecto porro numquam, sapiente mollitia magnam amet rem aliquid beatae atque aliquam fuga et ducimus nam doloribus praesentium consequuntur veritatis eius. Esse minus a hic at amet illo aut sed, quaerat nulla debitis et, minima voluptatem quo!</p>
@@ -94,17 +97,17 @@
             <hr class="hr-jurusan">
         </div>
         <div class="wrap">
-            <div class="jurusan">
+            <div class="jurusan" data-aos="fade-up" data-aos-duration="1000">
                 <i class="fa-solid fa-mobile-screen-button"></i>
                 <h3>Mobile App</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, dolor.</p>
             </div>
-            <div class="jurusan">
+            <div class="jurusan" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                 <i class="fa-solid fa-globe"></i>
                 <h3>Web Development</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit vel nemo non commodi aliquid veniam ullam saepe libero laborum natus!</p>
             </div>
-            <div class="jurusan">
+            <div class="jurusan" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                 <i class="fa-solid fa-desktop"></i>
                 <h3>Hardware</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro cum, ea atque eaque corporis placeat.</p>
@@ -181,6 +184,16 @@
 
     <!-- js -->
     <script src="js/script.js"></script>
+
+    <!-- js aos -->
+    <script src="assets/aos-animation/dist/aos.js"></script>
+
+    <!-- init aos -->
+    <script>
+        AOS.init({
+            once: true
+        });
+    </script>
 </body>
 
 </html>
