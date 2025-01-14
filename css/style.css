@@ -1,14 +1,15 @@
 :root {
-    --nav-bg: #ffffff;
-    --nav-bg-hover: #eaeaea;
+    --nav-bg: #0d6efd;
+    --nav-bg-hover: #0b5ed7;
     --color-nav: #333333;
-    --color-box: #333333;
+    --color-box: #0d6efd;
     --bg-body: #ffffff;
+    --color-body: #333333;
     --bg-body-2: #333333;
     --color-text: #333333;
     --hr-1: #ffffff;
     --hr-2: #333333;
-    --footer-bg: #333333;
+    --footer-bg: #0d6efd;
     /* --footer-text: #ffffff; */
 }
 
@@ -70,7 +71,7 @@ body {
     font-family: "Roboto";
     font-size: 16px;
     background-color: var(--bg-body);
-    color: #333;
+    color: var(--color-body);
 }
 
 
@@ -81,6 +82,7 @@ body {
     --color-nav: #ffffff;
     --color-box: #121212;
     --bg-body: #1E1E1E;
+    --color-body: #ffffff;
     --bg-body-2: #1E1E1E;
     --color-text: #ffffff;
     --hr-1: ;
@@ -94,14 +96,14 @@ body {
 .hr-ulasan {
     width: 150px;
     margin: 5px auto;
-    border-bottom: 3px solid #ffffff;
+    border-bottom: 3px solid var(--color-text);
 }
 
 .hr-jurusan, 
 .hr-contact {
     width: 150px;
     margin: 5px auto;
-    border-bottom: 3px solid var(--hr-2);
+    border-bottom: 3px solid var(--color-text);
 }
 
 
@@ -118,10 +120,11 @@ body {
 /* navbar */
 nav {
     display: flex;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
+    /* background-color: var(--nav-bg); */
     background-color: var(--nav-bg);
     padding: 0 7%;
     align-items: center;
@@ -134,7 +137,8 @@ nav {
 nav .logo h1 {
     font-weight: bold;
     font-style: italic;
-    color: var(--color-nav);
+    /* color: var(--color-nav); */
+    color: #ffffff;
 }
 
 nav .menu {
@@ -148,7 +152,8 @@ nav .menu-toggle {
     font-size: 22px;
     border: none;
     cursor: pointer;
-    color: var(--color-nav);
+    /* color: var(--color-nav); */
+    color: #ffffff;
 }
 
 nav .menu > li {
@@ -156,17 +161,20 @@ nav .menu > li {
 }
 
 nav .menu > li > a {
-    color: var(--color-nav);
+    /* color: var(--color-nav); */
+    color: #ffffff;
     text-decoration: none;
     padding: 20px;
     display: inline-block;
 }
 
 nav .menu > li > a:hover {
+    /* background-color: var(--nav-bg-hover); */
     background-color: var(--nav-bg-hover);
 }
 
 nav .menu .dropdown:hover > a {
+    /* background-color: var(--nav-bg-hover); */
     background-color: var(--nav-bg-hover);
 }
 
@@ -191,6 +199,7 @@ nav .menu > .dropdown > .dropdown-menu > li > a {
 
 nav .menu > .dropdown > .dropdown-menu > li > a:hover {
     background-color: #eaeaea;
+    /* background-color: yellow; */
 }
 
 nav .menu .dropdown:hover .dropdown-menu {
@@ -199,7 +208,8 @@ nav .menu .dropdown:hover .dropdown-menu {
 
 nav .theme {
     font-size: 22px;
-    color: var(--color-nav);
+    /* color: var(--color-nav); */
+    color: #ffffff;
     cursor: pointer;
     background-color: transparent;
     border: none;
@@ -275,7 +285,8 @@ nav .theme {
 /* section sambutan */
 .sambutan-container {
     width: 100%;
-    background-color: var(--bg-body-2);
+    background-color: var(--bg-body);
+    color: var(--color-body);
     min-height: 500px;
 }
 .sambutan {
@@ -283,7 +294,7 @@ nav .theme {
     margin: 0 auto;
     display: flex;
     padding: 40px 20px;
-    color: #fff;
+    /* color: ; */
 }
 
 .sambutan h2 {
@@ -297,6 +308,7 @@ nav .theme {
 
 /* section jurusan */
 .jurusan-container {
+    /* background-color: var(--bg-body); */
     width: 100%;
     min-height: 500px;
     padding: 40px 0;
@@ -325,7 +337,9 @@ nav .theme {
 .jurusan-container .jurusan {
     padding: 20px;
     background-color: var(--color-box);
-    color: #eaeaea;
+    color: #ffffff;
+    /* background-color: var(--color-box);
+    color: #eaeaea; */
     border-radius: 8px;
     text-align: center;
     width: 300px;
@@ -343,12 +357,13 @@ nav .theme {
     width: 100%;
     /* border-top: 5px solid red; */
     min-height: 500px;
-    background-color: var(--bg-body-2);
+    /* background-color: var(--bg-body-2); */
+    background-color: var(--bg-body);
     padding: 60px 0;
 }
 
 .ulasan-container .title h2 {
-    color: #ffffff;
+    /* color: #ffffff; */
     text-align: center;
 }
 
@@ -365,8 +380,8 @@ nav .theme {
 }
 
 .ulasan-container .ulasan .item-ulasan {
-    box-shadow: 0px 0px 5px black;
-    background-color: #ffffff;
+    /* box-shadow: 0px 0px 5px black; */
+    /* background-color: #ffffff; */
     text-align: center;
     padding: 20px;
     min-width: 250px;
@@ -384,6 +399,7 @@ nav .theme {
 .contact {
     width: 100%;
     min-height: 500px;
+    /* background-color: var(--bg-body); */
     background-color: var(--bg-body);
     padding: 40px 0;
 }
@@ -456,6 +472,7 @@ nav .theme {
 
 /* footer */
 footer {
+    /* background-color: var(--footer-bg); */
     background-color: var(--footer-bg);
     color: #ffffff;
     padding: 16px 0;
