@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../../css/style.css">
     <!-- icons fontawesome -->
     <link rel="stylesheet" href="../../assets/icons/fontawesome-free-6.7.2-web/css/all.css">
+    <!-- animation aos -->
+    <link rel="stylesheet" href="../../assets/aos-animation/dist/aos.css">
 
 </head>
 
@@ -71,15 +73,15 @@
     <!-- halaman masih kosong end -->
 
     <section class="ekskul">
-        <div class="ekskul-wrap">
+        <div class="ekskul-wrap" data-aos="fade-right" data-aos-duration="1000">
             <img src="../../assets/images/carousel/1.jpg" alt="ekskul 1">
             <h2>nama ekskul</h2>
         </div>
-        <div class="ekskul-wrap">
+        <div class="ekskul-wrap" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <img src="../../assets/images/carousel/2.jpg" alt="ekskul 2">
             <h2>nama ekskul</h2>
         </div>
-        <div class="ekskul-wrap">
+        <div class="ekskul-wrap" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
             <img src="../../assets/images/carousel/3.jpg" alt="ekskul 3">
             <h2>nama ekskul</h2>
         </div>
@@ -105,6 +107,12 @@
 
     <!-- js -->
     <script src="../../js/script.js"></script>
+    <!-- aos js -->
+    <script src="../../assets/aos-animation/dist/aos.js"></script>
+    <!-- aos init -->
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
