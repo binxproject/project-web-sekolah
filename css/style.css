@@ -256,7 +256,7 @@ nav .theme {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
-.btn-prev, .btn-next {
+/* .btn-prev, .btn-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -278,7 +278,7 @@ nav .theme {
 
 .btn-prev:hover, .btn-next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-}
+} */
 
 
 /* section sambutan */

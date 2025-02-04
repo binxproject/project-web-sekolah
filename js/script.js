@@ -126,17 +126,17 @@ if (slides) {
     };
 
 
-    btnPrev.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateBackgroundImage();
-        startAutoPlay();
-    });
+    // btnPrev.addEventListener('click', () => {
+    //     currentIndex = (currentIndex - 1 + images.length) % images.length;
+    //     updateBackgroundImage();
+    //     startAutoPlay();
+    // });
 
-    btnNext.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateBackgroundImage();
-        startAutoPlay();
-    });
+    // btnNext.addEventListener('click', () => {
+    //     currentIndex = (currentIndex + 1) % images.length;
+    //     updateBackgroundImage();
+    //     startAutoPlay();
+    // });
 
 
 
