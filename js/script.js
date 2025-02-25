@@ -219,11 +219,42 @@ prestasiItems.forEach(item => {
 });
 
 // event listener untuk tombol tutup modal
-btnCloseModal.addEventListener('click', closeModal);
+if(btnCloseModal) {
+    btnCloseModal.addEventListener('click', closeModal);
+}
+
 
 // event listener untuk menutup modal saat klik diluar konten modal
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
         closeModal();
     };
+});
+
+
+
+// dropdown toggle
+const dropdownToggle = document.querySelectorAll('.dropdown-toggle');
+
+dropdownToggle.forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const dropdownMenu = this.nextElementSibling;
+        
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            if(menu !== dropdownMenu) {
+                menu.classList.remove('active');
+            }
+        });
+
+        dropdownMenu.classList.toggle('active');
+    });
+});
+
+document.addEventListener('click', function(e) {
+    if(!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.classList.remove('active');
+        });
+    }
 });

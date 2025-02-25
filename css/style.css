@@ -201,7 +201,11 @@ nav .menu > .dropdown > .dropdown-menu > li > a:hover {
     /* background-color: yellow; */
 }
 
-nav .menu .dropdown:hover .dropdown-menu {
+/* nav .menu .dropdown:hover .dropdown-menu {
+    display: block;
+} */
+
+nav .menu .dropdown .dropdown-menu.active {
     display: block;
 }
 
